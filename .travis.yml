@@ -1,0 +1,11 @@
+language: generic 
+sudo: required
+services:
+  - docker
+
+before_script:
+  - cd frontend
+  - docker build -t adambrauns/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true adambrauns/docker-react npm run test
