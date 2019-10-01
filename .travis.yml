@@ -5,7 +5,7 @@ services:
 
 before_script:
   - cd complex
-  - docker build -t adambrauns/react-test -f ./client/Dockerfile.dev .
+  - docker build -t adambrauns/react-test -f ./client/Dockerfile.dev ./client
 
 script:
   - docker run -e CI=true adambrauns/react-test npm run test
